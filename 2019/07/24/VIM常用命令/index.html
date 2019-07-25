@@ -88,19 +88,19 @@
 
 
 
-<meta name="description" content="1.删除字符  要删除一个字符，只需要将光标移到该字符上按下”x”。 2.删除一行  删除一整行内容使用”dd”命令。删除后下面的行会移上来填补空缺。 3.删除换行符  在Vim中你可以把两行合并为一行，也就是说两行之间的换行符被删除了：命令是”J”。">
+<meta name="description" content="1.删除字符  要删除一个字符，只需要将光标移到该字符上按下”x”。 2.删除一行  删除一整行内容使用”dd”命令。删除后下面的行会移上来填补空缺。">
 <meta name="keywords" content="Linux,vim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VIM常用命令">
 <meta property="og:url" content="https://toukihei.github.io/2019/07/24/VIM常用命令/index.html">
 <meta property="og:site_name" content="中学为体，西学为用">
-<meta property="og:description" content="1.删除字符  要删除一个字符，只需要将光标移到该字符上按下”x”。 2.删除一行  删除一整行内容使用”dd”命令。删除后下面的行会移上来填补空缺。 3.删除换行符  在Vim中你可以把两行合并为一行，也就是说两行之间的换行符被删除了：命令是”J”。">
+<meta property="og:description" content="1.删除字符  要删除一个字符，只需要将光标移到该字符上按下”x”。 2.删除一行  删除一整行内容使用”dd”命令。删除后下面的行会移上来填补空缺。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://toukihei.github.io/2019/07/24/VIM常用命令/vim_keyboard.png">
-<meta property="og:updated_time" content="2019-07-25T13:53:19.000Z">
+<meta property="og:updated_time" content="2019-07-25T14:56:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VIM常用命令">
-<meta name="twitter:description" content="1.删除字符  要删除一个字符，只需要将光标移到该字符上按下”x”。 2.删除一行  删除一整行内容使用”dd”命令。删除后下面的行会移上来填补空缺。 3.删除换行符  在Vim中你可以把两行合并为一行，也就是说两行之间的换行符被删除了：命令是”J”。">
+<meta name="twitter:description" content="1.删除字符  要删除一个字符，只需要将光标移到该字符上按下”x”。 2.删除一行  删除一整行内容使用”dd”命令。删除后下面的行会移上来填补空缺。">
 <meta name="twitter:image" content="https://toukihei.github.io/2019/07/24/VIM常用命令/vim_keyboard.png">
 
 
@@ -383,11 +383,13 @@
       
 
       
-        <h2 id="1-删除字符"><a href="#1-删除字符" class="headerlink" title="1.删除字符"></a>1.删除字符</h2><p>  要删除一个字符，只需要将光标移到该字符上按下”x”。</p>
+        <meta name="referrer" content="no-referrer">
+
+<h2 id="1-删除字符"><a href="#1-删除字符" class="headerlink" title="1.删除字符"></a>1.删除字符</h2><p>  要删除一个字符，只需要将光标移到该字符上按下”x”。</p>
 <h2 id="2-删除一行"><a href="#2-删除一行" class="headerlink" title="2.删除一行"></a>2.删除一行</h2><p>  删除一整行内容使用”dd”命令。删除后下面的行会移上来填补空缺。</p>
-<h2 id="3-删除换行符"><a href="#3-删除换行符" class="headerlink" title="3.删除换行符"></a>3.删除换行符</h2><p>  在Vim中你可以把两行合并为一行，也就是说两行之间的换行符被删除了：命令是”J”。</p>
 <a id="more"></a>
 
+<h2 id="3-删除换行符"><a href="#3-删除换行符" class="headerlink" title="3.删除换行符"></a>3.删除换行符</h2><p>  在Vim中你可以把两行合并为一行，也就是说两行之间的换行符被删除了：命令是”J”。</p>
 <h2 id="4-撤销"><a href="#4-撤销" class="headerlink" title="4.撤销"></a>4.撤销</h2><p>  如果你误删了过多的内容。显然你可以再输入一遍，但是命令”u” 更简便，它可以撤消上一次的操作。</p>
 <h2 id="5-重做"><a href="#5-重做" class="headerlink" title="5.重做"></a>5.重做</h2><p>  如果你撤消了多次，你还可以用CTRL-R(重做)来反转撤消的动作。换句话说，它是对撤消的撤消。撤消命令还有另一种形式，”U”命令，它一次撤消对一行的全部操作。第二次使用该命令则会撤消前一个”U”的操作。用”u”和CTRL-R你可以找回任何一个操作状态。</p>
 <h2 id="6-追加"><a href="#6-追加" class="headerlink" title="6.追加"></a>6.追加</h2><p>  “i”命令可以在当前光标之前插入文本。<br>  “a”命令可以在当前光标之后插入文本。<br>  “o”命令可以在当前行的下面另起一行，并使当前模式转为Insert模式。<br>  “O”命令(注意是大写的字母O)将在当前行的上面另起一行。</p>
@@ -505,6 +507,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/07/25/我的杂诗纪事/" rel="prev" title="我的杂诗纪事">
+                我的杂诗纪事 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -606,7 +612,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -619,7 +625,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -728,7 +734,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.3k字</span>
+  <span class="post-count">博客全站共8.7k字</span>
 </div>
 
         
