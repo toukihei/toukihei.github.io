@@ -88,19 +88,19 @@
 
 
 
-<meta name="description" content="一 、ABTest与统计学数据分析告诉我们要不要去做一件事情，ab 实验反馈告诉我们我们做得好不好，哪里有问题，以及衡量可以带来多少确定性的增长。 ABTest的目的是为了快速验证一个版本是不是比另外一个版本要好。 统计学能告诉我们如何抽样才能具有充分的代表性，如何从样本反应出的信息中推测总体状况。 理论基础1、中心极限定理：大量相互独立的随机变量，其均值（或者和）的分布以正态分布为极限（意思就是">
+<meta name="description" content="一 、ABTest与统计学数据分析告诉我们要不要去做一件事情，ab 实验反馈告诉我们我们做得好不好，哪里有问题，以及衡量可以带来多少确定性的增长。 ABTest的目的是为了快速验证一个版本是不是比另外一个版本要好。 统计学能告诉我们如何抽样才能具有充分的代表性，如何从样本反应出的信息中推测总体状况。">
 <meta name="keywords" content="统计学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AB测试">
 <meta property="og:url" content="https://toukihei.github.io/2019/07/19/AB测试/index.html">
 <meta property="og:site_name" content="中学为体，西学为用">
-<meta property="og:description" content="一 、ABTest与统计学数据分析告诉我们要不要去做一件事情，ab 实验反馈告诉我们我们做得好不好，哪里有问题，以及衡量可以带来多少确定性的增长。 ABTest的目的是为了快速验证一个版本是不是比另外一个版本要好。 统计学能告诉我们如何抽样才能具有充分的代表性，如何从样本反应出的信息中推测总体状况。 理论基础1、中心极限定理：大量相互独立的随机变量，其均值（或者和）的分布以正态分布为极限（意思就是">
+<meta property="og:description" content="一 、ABTest与统计学数据分析告诉我们要不要去做一件事情，ab 实验反馈告诉我们我们做得好不好，哪里有问题，以及衡量可以带来多少确定性的增长。 ABTest的目的是为了快速验证一个版本是不是比另外一个版本要好。 统计学能告诉我们如何抽样才能具有充分的代表性，如何从样本反应出的信息中推测总体状况。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/647922/201805/647922-20180531000949753-1774088922.jpg">
-<meta property="og:updated_time" content="2019-07-19T05:02:43.000Z">
+<meta property="og:updated_time" content="2019-07-25T13:34:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AB测试">
-<meta name="twitter:description" content="一 、ABTest与统计学数据分析告诉我们要不要去做一件事情，ab 实验反馈告诉我们我们做得好不好，哪里有问题，以及衡量可以带来多少确定性的增长。 ABTest的目的是为了快速验证一个版本是不是比另外一个版本要好。 统计学能告诉我们如何抽样才能具有充分的代表性，如何从样本反应出的信息中推测总体状况。 理论基础1、中心极限定理：大量相互独立的随机变量，其均值（或者和）的分布以正态分布为极限（意思就是">
+<meta name="twitter:description" content="一 、ABTest与统计学数据分析告诉我们要不要去做一件事情，ab 实验反馈告诉我们我们做得好不好，哪里有问题，以及衡量可以带来多少确定性的增长。 ABTest的目的是为了快速验证一个版本是不是比另外一个版本要好。 统计学能告诉我们如何抽样才能具有充分的代表性，如何从样本反应出的信息中推测总体状况。">
 <meta name="twitter:image" content="https://images2018.cnblogs.com/blog/647922/201805/647922-20180531000949753-1774088922.jpg">
 
 
@@ -386,6 +386,8 @@
         <h1 id="一-、ABTest与统计学"><a href="#一-、ABTest与统计学" class="headerlink" title="一 、ABTest与统计学"></a>一 、ABTest与统计学</h1><p>数据分析告诉我们要不要去做一件事情，ab 实验反馈告诉我们我们做得好不好，哪里有问题，以及衡量可以带来多少确定性的增长。</p>
 <p>ABTest的目的是为了快速验证一个版本是不是比另外一个版本要好。</p>
 <p>统计学能告诉我们如何抽样才能具有充分的代表性，如何<strong>从样本反应出的信息中推测总体状况</strong>。</p>
+<a id="more"></a>
+
 <h2 id="理论基础"><a href="#理论基础" class="headerlink" title="理论基础"></a>理论基础</h2><h3 id="1、中心极限定理："><a href="#1、中心极限定理：" class="headerlink" title="1、中心极限定理："></a><strong>1</strong>、中心极限定理：</h3><p>大量相互独立的随机变量，其均值（或者和）的分布以正态分布为极限（意思就是当满足某些条件的时候，比如Sample Size比较大，采样次数区域无穷大的时候，就越接近正态分布）。而这个定理amazing的地方在于，无论是什么分布的随机变量，都满足这个定理。</p>
 <h3 id="2、大数定理"><a href="#2、大数定理" class="headerlink" title="2、大数定理"></a><strong>2</strong>、大数定理</h3><p>​    简单的可以描述为，如果有一个随机变量X，你不断的观察并且采样这个随机变量，得到了n个采样值，然后求得这n个采样值得平均值，当n趋向于正无穷的时候，这个平均值就收敛于这个随机变量X的期望。</p>
 <h3 id="3、置信区间和统计显著性"><a href="#3、置信区间和统计显著性" class="headerlink" title="3、置信区间和统计显著性"></a>3、置信区间和统计显著性</h3><p>​        置信区间是（用来对一个概率样本的总体参数进行区间估计的） 样本均值范围，它展现了这个均值范围包含总体参数的概率，这个概率称为置信水平；</p>
