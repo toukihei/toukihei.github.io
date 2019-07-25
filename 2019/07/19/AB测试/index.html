@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="统计学,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="中学为体，西学为用" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一 、ABTest与统计学数据分析告诉我们要不要去做一件事情，ab 实验反馈告诉我们我们做得好不好，哪里有问题，以及衡量可以带来多少确定性的增长。 ABTest的目的是为了快速验证一个版本是不是比另外一个版本要好。 统计学能告诉我们如何抽样才能具有充分的代表性，如何从样本反应出的信息中推测总体状况。 理论基础1、中心极限定理：大量相互独立的随机变量，其均值（或者和）的分布以正态分布为极限（意思就是">
+<meta name="keywords" content="统计学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AB测试">
+<meta property="og:url" content="https://toukihei.github.io/2019/07/19/AB测试/index.html">
+<meta property="og:site_name" content="中学为体，西学为用">
+<meta property="og:description" content="一 、ABTest与统计学数据分析告诉我们要不要去做一件事情，ab 实验反馈告诉我们我们做得好不好，哪里有问题，以及衡量可以带来多少确定性的增长。 ABTest的目的是为了快速验证一个版本是不是比另外一个版本要好。 统计学能告诉我们如何抽样才能具有充分的代表性，如何从样本反应出的信息中推测总体状况。 理论基础1、中心极限定理：大量相互独立的随机变量，其均值（或者和）的分布以正态分布为极限（意思就是">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/647922/201805/647922-20180531000949753-1774088922.jpg">
+<meta property="og:updated_time" content="2019-07-19T05:02:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AB测试">
+<meta name="twitter:description" content="一 、ABTest与统计学数据分析告诉我们要不要去做一件事情，ab 实验反馈告诉我们我们做得好不好，哪里有问题，以及衡量可以带来多少确定性的增长。 ABTest的目的是为了快速验证一个版本是不是比另外一个版本要好。 统计学能告诉我们如何抽样才能具有充分的代表性，如何从样本反应出的信息中推测总体状况。 理论基础1、中心极限定理：大量相互独立的随机变量，其均值（或者和）的分布以正态分布为极限（意思就是">
+<meta name="twitter:image" content="https://images2018.cnblogs.com/blog/647922/201805/647922-20180531000949753-1774088922.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://toukihei.github.io/2019/07/19/AB测试/">
+
+
+
+
+
+  <title>AB测试 | 中学为体，西学为用</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+<a href="https://github.com/toukihei" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">中学为体，西学为用</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">There is no royal road to learning.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://toukihei.github.io/2019/07/19/AB测试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tou Kihei">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="中学为体，西学为用">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">AB测试</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T11:11:59+08:00">
+                2019-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-、ABTest与统计学"><a href="#一-、ABTest与统计学" class="headerlink" title="一 、ABTest与统计学"></a>一 、ABTest与统计学</h1><p>数据分析告诉我们要不要去做一件事情，ab 实验反馈告诉我们我们做得好不好，哪里有问题，以及衡量可以带来多少确定性的增长。</p>
+<p>ABTest的目的是为了快速验证一个版本是不是比另外一个版本要好。</p>
+<p>统计学能告诉我们如何抽样才能具有充分的代表性，如何<strong>从样本反应出的信息中推测总体状况</strong>。</p>
+<h2 id="理论基础"><a href="#理论基础" class="headerlink" title="理论基础"></a>理论基础</h2><h3 id="1、中心极限定理："><a href="#1、中心极限定理：" class="headerlink" title="1、中心极限定理："></a><strong>1</strong>、中心极限定理：</h3><p>大量相互独立的随机变量，其均值（或者和）的分布以正态分布为极限（意思就是当满足某些条件的时候，比如Sample Size比较大，采样次数区域无穷大的时候，就越接近正态分布）。而这个定理amazing的地方在于，无论是什么分布的随机变量，都满足这个定理。</p>
+<h3 id="2、大数定理"><a href="#2、大数定理" class="headerlink" title="2、大数定理"></a><strong>2</strong>、大数定理</h3><p>​    简单的可以描述为，如果有一个随机变量X，你不断的观察并且采样这个随机变量，得到了n个采样值，然后求得这n个采样值得平均值，当n趋向于正无穷的时候，这个平均值就收敛于这个随机变量X的期望。</p>
+<h3 id="3、置信区间和统计显著性"><a href="#3、置信区间和统计显著性" class="headerlink" title="3、置信区间和统计显著性"></a>3、置信区间和统计显著性</h3><p>​        置信区间是（用来对一个概率样本的总体参数进行区间估计的） 样本均值范围，它展现了这个均值范围包含总体参数的概率，这个概率称为置信水平；</p>
+<p>置信水平代表了估计的可靠度，一般而言，我们采用95% 的置信水平进行区间估计。</p>
+<p>置信区间在ABtest中的意义：（两个总体的均值之差的置信区间）</p>
+<p>由t检验大样本检验公式计算得出Z值（由均值、样本量、方差计算出来的统计值，通过这个统计值再结合分布公式，也可以计算出p value从而作出是否拒绝原假设的决策），再根据两个总体的均值、标准差和样本大小，利用以下公式即可求出两个总体均值差的95%置信区间:</p>
+<p> <img src="https://images2018.cnblogs.com/blog/647922/201805/647922-20180531000949753-1774088922.jpg" alt="img"></p>
+<p> 值得注意的是，置信区间的上下限同为正或负，只能说明试验是统计显著的（也就是试验版本和对照版本有差异），但是这个差异有可能是非常小的，在实际应用中微不足道的。因此，只有兼备统计显著和效果显著两个特征的结果，才能说明该版本是可用，值得发布的。</p>
+<h1 id="二、如何抽样"><a href="#二、如何抽样" class="headerlink" title="二、如何抽样"></a>二、如何抽样</h1><p>要保证样本具有足够的代表性需要做到2点：</p>
+<p>1、随机抽样</p>
+<p>2、足够的样本量</p>
+<h3 id="随机抽样"><a href="#随机抽样" class="headerlink" title="随机抽样"></a><strong>随机抽样</strong></h3><p>随机抽样可以保证样本中的每个研究个体均有相等的机会被抽中的抽样方法。常用的随机抽样法有：</p>
+<p><strong>·</strong>简单随机抽样（simple randomsampling）</p>
+<p><strong>·</strong>系统抽样（systematicsampling）-也称等距抽样</p>
+<p><strong>·</strong>分层随机抽样（stratified randomsampling） </p>
+<p><strong>·</strong>整群抽样（cluster sampling）</p>
+<p><strong>ABTest中的样本（实验组和对照组用户群）是根据个体（具体某个用户）的某个属性（userId，cookie等）进行hash取模后抽取出来的。hash算法保证了抽取的随机性。因为互联网数据海量以及获取方便的特点，简单随机抽样是最常用的抽样方法。</strong></p>
+<h3 id="足够的样本量"><a href="#足够的样本量" class="headerlink" title="足够的样本量"></a><strong>足够的样本量</strong></h3><p>足够的样本量怎么保证呢？我们在这里先不展开讲样本量如何影响最终结果的。但我们可以先建立一个定性的认识：样本量越大，通过样本去评估总体的误差就越小。当误差小于我们需要的精度时，样本量就足够了。</p>
+<h1 id="三、-如何估计总体"><a href="#三、-如何估计总体" class="headerlink" title="三、 如何估计总体"></a><strong>三、 如何估计总体</strong></h1><p>经过抽样，我们得到了实验组和对照组的用户群。并通过观测收集（数据上报），得到这些用户当天是否活跃的数据。</p>
+<p><strong>定理结论</strong></p>
+<p>“随机变量之和的分布函数向正态分布收敛。“</p>
+<p>凡是在一定条件下断定随机变量之和的极限分布是正态分布的定理，在概率论中被统称为“中心极限定理”。</p>
+<h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a><strong>理解</strong></h3><p>该定理的着眼点是“变量之和的分布”，一个变量服从正态分布的并不多，但多个变量之和的分布服从于正态分布则是普遍存在的。</p>
+<p>例如均值，我们知道均值就是多个变量值之和的变换形式，是变量之和的平均值，故样本均值也是服从正态分布的。</p>
+<p>中心极限定理揭示了大部分社会经济现象表现为正态分布的原因，正是中心极限定理让正态分布有了如此广阔的应用。在考虑随机因素总和的极限分布时，只要那些因素对总体的影响均匀的小，同时又是独立的，总和达到一定数量，则可认为其服从正态分布。</p>
+<h3 id="中心极限定理解读"><a href="#中心极限定理解读" class="headerlink" title="中心极限定理解读"></a><strong>中心极限定理解读</strong></h3><p>1、样本均值约等于总体平均值；</p>
+<p>2、不管总体是什么分布，任意一个总体的样本均值总会围绕在总体均值左右，呈现正态分布。</p>
+<h3 id="如何应用？"><a href="#如何应用？" class="headerlink" title="如何应用？"></a><strong>如何应用？</strong></h3><p>如上可知，我们不知道总体的数量和均值，有了中心极限定理我们就可以通过一个抽样得到的样本，来推断总体的特征，这为我们研究总体的特性指明了一条路。具体标准作业流程如下：</p>
+<p>1、直接抽取样本，其容量为n</p>
+<p>2、求出均值和标准差s</p>
+<p>3、根据标准差s，求出标准误差SE＝ </p>
+<p>4、根据置信水平，如95%，查Z表，求出标准分</p>
+<p>5、均值加减标准分个标准误差，即得出置信区间的上下限</p>
+<p>至此我们会得出一个可信度为95%的区间，也就是说总体均值有95%的可能性落在这个区间里。这样我们仅通过一个样本的分析，就得到了不可能知晓的总体的均值的一个范围。</p>
+<p>需要注意的是，大样本的估计本质上是，根据中心极限定理应用正态分布，求Z值，来计算置信区间。</p>
+<h1 id="四、AB-test和离线评估的优缺点和使用场景"><a href="#四、AB-test和离线评估的优缺点和使用场景" class="headerlink" title="四、AB test和离线评估的优缺点和使用场景"></a><strong>四、AB test和离线评估的优缺点和使用场景</strong></h1><p>1、AB test 系统搭建和维护需要一定成本，对技术也有一定要求，如果该系统做得不好，用了反而有害；ab系统更多是用于方便衡量算法／产品优化带来的效果，对于用人紧缺的创业公司其实不是必要的；</p>
+<p>2、离线评估最重要是模拟真实线上场景，如果模拟不好，离线测试的结果也不可信；</p>
+<p>　　但是，当公司的ab test系统还没有搭建好的时候，离线评估还是很有必要，起码有一些明显的算法问题可以通过离线测试看出来，模型选择和调优也需要离线测试，而且离线测试不会对线上造成影响，ab实验则会；</p>
+<p>3、当产品在市场上的竞争环境激烈，项目上线需要争取有利时机时，往往凭借战略决策来决定上线与否而不是ab实验，ab实验有一段观察期而且需要外部条件相对稳定才能得出客观的结论，适用于产品的发展期处于相对比较平稳的时候，防止决策错误导致数据下降；</p>
+<p>　　因此，实时数据分析是有必要的，实时ab test必要性不是很强；</p>
+<p>4、多数的ab test系统并不具备决策推全后仍然持续观察的能力，有一些关乎实现公司或者产品长期战略目标的功能／算法，可能短期内会导致指标下降或者没有明显增长，但是也必须要上线；</p>
+<p>5、AB test 帮助你在现有流量中获取更多的收益，或者在现有流量中提升ROI，或者说在现有用户基础上提升活跃度，但是在衡量对用户量增长或者获取新流量是否有帮助上，ab test或者所起作用不大。</p>
+<p>6、AB test还有一个缺点，就是只能做小范围的效果比较，比如作用于同一个场景使用不同算法的效果比较；比如它不能告诉我们，A业务的推荐算法是否比B业务的推荐算法做得好；也就是说它不能衡量一个模型的迁移和泛化能力；</p>
+<p>到这里，我们已经实现了对版本A和版本B 全量发布后的用户日均使用时长的估计。那么，这是否可以得出版本B比版本A好的结论呢？</p>
+
+      
+    </div>
+    
+    
+    
+	<div>
+	  
+	    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+	  
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/统计学/" rel="tag"># 统计学</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/20/用Markdown写博客/" rel="prev" title="Markdown写博客">
+                Markdown写博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tou Kihei</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/toukihei" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:191439543@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-、ABTest与统计学"><span class="nav-number">1.</span> <span class="nav-text">一 、ABTest与统计学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#理论基础"><span class="nav-number">1.1.</span> <span class="nav-text">理论基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、中心极限定理："><span class="nav-number">1.1.1.</span> <span class="nav-text">1、中心极限定理：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、大数定理"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、大数定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、置信区间和统计显著性"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、置信区间和统计显著性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、如何抽样"><span class="nav-number">2.</span> <span class="nav-text">二、如何抽样</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机抽样"><span class="nav-number">2.0.1.</span> <span class="nav-text">随机抽样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#足够的样本量"><span class="nav-number">2.0.2.</span> <span class="nav-text">足够的样本量</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#三、-如何估计总体"><span class="nav-number">3.</span> <span class="nav-text">三、 如何估计总体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解"><span class="nav-number">3.0.1.</span> <span class="nav-text">理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中心极限定理解读"><span class="nav-number">3.0.2.</span> <span class="nav-text">中心极限定理解读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何应用？"><span class="nav-number">3.0.3.</span> <span class="nav-text">如何应用？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、AB-test和离线评估的优缺点和使用场景"><span class="nav-number">4.</span> <span class="nav-text">四、AB test和离线评估的优缺点和使用场景</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tou Kihei</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+-->
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共8.3k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
