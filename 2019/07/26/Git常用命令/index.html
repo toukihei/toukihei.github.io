@@ -88,19 +88,16 @@
 
 
 
-<meta name="description" content="1 常用1234567891011121314151617$ git remote add origin git@github.com:yeszao/dofiler.git         # 配置远程git版本库$ git pull origin master                                          # 下载代码及快速合并 $ git push o">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git常用命令">
 <meta property="og:url" content="https://toukihei.github.io/2019/07/26/Git常用命令/index.html">
 <meta property="og:site_name" content="中学为体，西学为用">
-<meta property="og:description" content="1 常用1234567891011121314151617$ git remote add origin git@github.com:yeszao/dofiler.git         # 配置远程git版本库$ git pull origin master                                          # 下载代码及快速合并 $ git push o">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://toukihei.github.io/2019/07/26/Git常用命令/timg.jpeg">
-<meta property="og:updated_time" content="2019-07-26T15:11:23.000Z">
+<meta property="og:updated_time" content="2019-07-26T15:13:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git常用命令">
-<meta name="twitter:description" content="1 常用1234567891011121314151617$ git remote add origin git@github.com:yeszao/dofiler.git         # 配置远程git版本库$ git pull origin master                                          # 下载代码及快速合并 $ git push o">
 <meta name="twitter:image" content="https://toukihei.github.io/2019/07/26/Git常用命令/timg.jpeg">
 
 
@@ -386,6 +383,8 @@
         <meta name="referrer" content="no-referrer">
 
 <p><img src="//toukihei.github.io/2019/07/26/Git常用命令/timg.jpeg" alt="键盘对应图"></p>
+<a id="more"></a>
+
 <h2 id="1-常用"><a href="#1-常用" class="headerlink" title="1 常用"></a>1 常用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@github.com:yeszao/dofiler.git         # 配置远程git版本库</span><br><span class="line">$ git pull origin master                                          # 下载代码及快速合并 </span><br><span class="line">$ git push origin master                                          # 上传代码及快速合并</span><br><span class="line">$ git fetch origin                                                # 从远程库获取代码</span><br><span class="line"></span><br><span class="line">$ git branch                                                      # 显示所有分支</span><br><span class="line">$ git checkout master                                             # 切换到master分支</span><br><span class="line">$ git checkout -b dev                                             # 创建并切换到dev分支</span><br><span class="line">$ git commit -m &quot;first version&quot;                                   # 提交</span><br><span class="line"></span><br><span class="line">$ git status                                                      # 查看状态</span><br><span class="line">$ git log                                                         # 查看提交历史</span><br><span class="line"></span><br><span class="line">$ git config --global core.editor vim                             # 设置默认编辑器为vim（git默认用nano）</span><br><span class="line">$ git config core.ignorecase false                                # 设置大小写敏感</span><br><span class="line">$ git config --global user.name &quot;YOUR NAME&quot;                       # 设置用户名</span><br><span class="line">$ git config --global user.email &quot;YOUR EMAIL ADDRESS&quot;             # 设置邮箱</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-别名Alias"><a href="#2-别名Alias" class="headerlink" title="2 别名Alias"></a>2 别名Alias</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global alias.br=&quot;branch&quot;                 # 创建/查看本地分支</span><br><span class="line">$ git config --global alias.co=&quot;checkout&quot;               # 切换分支</span><br><span class="line">$ git config --global alias.cb=&quot;checkout -b&quot;            # 创建并切换到新分支</span><br><span class="line">$ git config --global alias.cm=&quot;commit -m&quot;              # 提交</span><br><span class="line">$ git config --global alias.st=&quot;status&quot;                 # 查看状态</span><br><span class="line">$ git config --global alias.pullm=&quot;pull origin master&quot;  # 拉取分支</span><br><span class="line">$ git config --global alias.pushm=&quot;push origin master&quot;  # 提交分支</span><br><span class="line">$ git config --global alias.log=&quot;git log --oneline --graph --decorate --color=always&quot; # 单行、分颜色显示记录</span><br><span class="line">$ git config --global alias.logg=&quot;git log --graph --all --format=format:&apos;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)&apos; --abbrev-commit --date=relative&quot; # 复杂显示</span><br></pre></td></tr></table></figure>
