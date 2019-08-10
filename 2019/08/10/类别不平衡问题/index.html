@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="文学,诗,纪事,">
+  <meta name="keywords" content="机器学习,样本不均衡,">
 
 
 
@@ -88,20 +88,20 @@
 
 
 
-<meta name="description" content="持续更新中……  《夏天暴雨来临前情景》2019年7月20日纪事">
-<meta name="keywords" content="文学,诗,纪事">
+<meta name="description" content="概述类别不均衡是指在分类学习算法中，不同类别样本的比例相差悬殊，它会对算法的学习过程造成重大的干扰。比如在一个二分类的问题上，有1000个样本，其中5个正样本，995个负样本，在这种情况下，算法只需将所有的样本预测为负样本，那么它的精度也可以达到99.5%，虽然结果的精度很高，但它依然没有价值，因为这样的学习算法不能预测出正样本。这里我们可以知道不均衡问题会导致样本较少那一类的高错分率，即较少">
+<meta name="keywords" content="机器学习,样本不均衡">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的杂诗纪事">
-<meta property="og:url" content="https://toukihei.github.io/2019/07/25/我的杂诗纪事/index.html">
+<meta property="og:title" content="类别不平衡问题">
+<meta property="og:url" content="https://toukihei.github.io/2019/08/10/类别不平衡问题/index.html">
 <meta property="og:site_name" content="中学为体，西学为用">
-<meta property="og:description" content="持续更新中……  《夏天暴雨来临前情景》2019年7月20日纪事">
+<meta property="og:description" content="概述类别不均衡是指在分类学习算法中，不同类别样本的比例相差悬殊，它会对算法的学习过程造成重大的干扰。比如在一个二分类的问题上，有1000个样本，其中5个正样本，995个负样本，在这种情况下，算法只需将所有的样本预测为负样本，那么它的精度也可以达到99.5%，虽然结果的精度很高，但它依然没有价值，因为这样的学习算法不能预测出正样本。这里我们可以知道不均衡问题会导致样本较少那一类的高错分率，即较少">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://toukihei.github.io/2019/07/25/我的杂诗纪事/poet.jpg">
-<meta property="og:updated_time" content="2019-07-26T14:37:33.000Z">
+<meta property="og:image" content="https://toukihei.github.io/2019/08/10/类别不平衡问题/sampling_method.png">
+<meta property="og:updated_time" content="2019-08-10T09:27:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的杂诗纪事">
-<meta name="twitter:description" content="持续更新中……  《夏天暴雨来临前情景》2019年7月20日纪事">
-<meta name="twitter:image" content="https://toukihei.github.io/2019/07/25/我的杂诗纪事/poet.jpg">
+<meta name="twitter:title" content="类别不平衡问题">
+<meta name="twitter:description" content="概述类别不均衡是指在分类学习算法中，不同类别样本的比例相差悬殊，它会对算法的学习过程造成重大的干扰。比如在一个二分类的问题上，有1000个样本，其中5个正样本，995个负样本，在这种情况下，算法只需将所有的样本预测为负样本，那么它的精度也可以达到99.5%，虽然结果的精度很高，但它依然没有价值，因为这样的学习算法不能预测出正样本。这里我们可以知道不均衡问题会导致样本较少那一类的高错分率，即较少">
+<meta name="twitter:image" content="https://toukihei.github.io/2019/08/10/类别不平衡问题/sampling_method.png">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://toukihei.github.io/2019/07/25/我的杂诗纪事/">
+  <link rel="canonical" href="https://toukihei.github.io/2019/08/10/类别不平衡问题/">
 
 
 
 
 
-  <title>我的杂诗纪事 | 中学为体，西学为用</title>
+  <title>类别不平衡问题 | 中学为体，西学为用</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://toukihei.github.io/2019/07/25/我的杂诗纪事/">
+    <link itemprop="mainEntityOfPage" href="https://toukihei.github.io/2019/08/10/类别不平衡问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tou Kihei">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我的杂诗纪事</h1>
+          <h1 class="post-title" itemprop="name headline">类别不平衡问题</h1>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-25T22:38:43+08:00">
-                2019-07-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-10T17:21:07+08:00">
+                2019-08-10
               </time>
             
 
@@ -346,7 +346,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  462
+                  2.5k
                 </span>
               
 
@@ -362,7 +362,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  8
                 </span>
               
             </div>
@@ -385,97 +385,53 @@
       
         <meta name="referrer" content="no-referrer">
 
-<p>持续更新中……</p>
-<p><img src="//toukihei.github.io/2019/07/25/我的杂诗纪事/poet.jpg" alt="键盘对应图"></p>
-<h2 id="《夏天暴雨来临前情景》"><a href="#《夏天暴雨来临前情景》" class="headerlink" title="《夏天暴雨来临前情景》"></a>《夏天暴雨来临前情景》</h2><h3 id="2019年7月20日纪事"><a href="#2019年7月20日纪事" class="headerlink" title="2019年7月20日纪事"></a>2019年7月20日纪事</h3><a id="more"></a>
-
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>类别不均衡是指在分类学习算法中，不同类别样本的比例相差悬殊，它会对算法的学习过程造成重大的干扰。比如在一个二分类的问题上，有1000个样本，其中5个正样本，995个负样本，在这种情况下，算法只需将所有的样本预测为负样本，那么它的精度也可以达到99.5%，虽然结果的精度很高，但它依然没有价值，因为这样的学习算法不能预测出正样本。这里我们可以知道不均衡问题会导致样本较少那一类的高错分率，即较少一类的样本会有较大的比例会被预测成样本数量较多的那一类。</p>
+<p>​        样本分布不均衡将导致样本量少的分类所包含的特征过少，并很难从中提取规律；即使得到分类模型，也容易产生过度依赖于有限的数据样本而导致过拟合的问题，当模型应用到新的数据上时，模型的准确性和鲁棒性将很差。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
+<p>类别不平衡问题，顾名思义，即数据集中存在某一类样本，其数量远多于或远少于其他类样本，从而导致一些机器学习模型失效的问题。</p>
+</blockquote>
+<h2 id="存在场景"><a href="#存在场景" class="headerlink" title="存在场景"></a>存在场景</h2><p>类别不平衡问题在很多场景中存在。</p>
+<ul>
+<li>异常检测场景。大多数企业中的异常个案都是少量的，比如恶意刷单、黄牛订单、信用卡欺诈、电力窃电、设备故障等，这些数据样本所占的比例通常是整体样本中很少的一部分，以信用卡欺诈为例，刷实体信用卡的欺诈比例一般都在0.1%以内。</li>
+<li>客户流失场景。大型企业的流失客户相对于整体客户通常是少量的，尤其对于具有垄断地位的行业巨擘，例如电信、石油、网络运营商等更是如此。</li>
+<li>罕见事件的分析。罕见事件与异常检测类似，都属于发生个案较少；但不同点在于异常检测通常都有是预先定义好的规则和逻辑，并且大多数异常事件都对会企业运营造成负面影响，因此针对异常事件的检测和预防非常重要；但罕见事件则无法预判，并且也没有明显的积极和消极影响倾向。例如由于某网络大V无意中转发了企业的一条趣味广告导致用户流量明显提升便属于此类。</li>
+<li>发生频率低的事件。这种事件是预期或计划性事件，但是发生频率非常低。例如每年1次的双11盛会一般都会产生较高的销售额，但放到全年来看这一天的销售额占比很可能只有1%不到，尤其对于很少参与活动的公司而言，这种情况更加明显。这种属于典型的低频事件。</li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>1、过采样，减少数量较多那一类样本的数量，使得正负样本比例均衡。<br>2、欠采样，增加数量较少那一类样本的数量，使得正负样本比例均衡。<br>3、不处理样本，样本分类阈值移动。</p>
+<h3 id="欠采样方法"><a href="#欠采样方法" class="headerlink" title="欠采样方法"></a>欠采样方法</h3><p>直接对训练集中多数类样本进行“欠采样”（undersampling），即去除一些多数类中的样本使得正例、反例数目接近，然后再进行学习。</p>
+<h4 id="随机欠采样方法"><a href="#随机欠采样方法" class="headerlink" title="随机欠采样方法"></a>随机欠采样方法</h4><p>随机欠采样顾名思义即从多数类$S_{maj}$中随机选择一些样样本组成样本集 $E$。然后将样本集 $E$从 $S_{maj}$ 中移除。新的数据集 $S_{new-maj}= S_{maj}- E$。</p>
+<h4 id="随机欠采样缺点"><a href="#随机欠采样缺点" class="headerlink" title="随机欠采样缺点"></a>随机欠采样缺点</h4><p>随机欠采样方法通过改变多数类样本比例以达到修改样本分布的目的，从而使样本分布较为均衡，但是这也存在一些问题。对于随机欠采样，由于采样的样本集合要少于原来的样本集合，因此会造成一些信息缺失，即将多数类样本删除有可能会导致分类器丢失有关多数类的重要信息。</p>
+<p>为了克服随机欠采样方法导致的信息缺失问题，又要保证算法表现出较好的不均衡数据分类性能，出现了欠采样法代表性的算法EasyEnsemble和BalanceCascade算法。</p>
+<h4 id="欠采样代表性算法-EasyEnsemble"><a href="#欠采样代表性算法-EasyEnsemble" class="headerlink" title="欠采样代表性算法-EasyEnsemble"></a>欠采样代表性算法-EasyEnsemble</h4><p>算法步骤：</p>
+<p>1)从多数类中有放回的随机采样$n$次，每次选取与少数类数目相近的样本个数，那么可以得到$n$个样本集合记作${S_{1maj},S_{2maj},…,S_{nmaj}}$。</p>
+<p>2)然后，将每一个多数类样本的子集与少数类样本合并并训练出一个模型，可以得到$n$个模型。</p>
+<p>3)最终将这些模型组合形成一个集成学习系统，最终的模型结果是这$n$个模型的平均值。</p>
+<h4 id="欠采样代表性算法-BalanceCascade"><a href="#欠采样代表性算法-BalanceCascade" class="headerlink" title="欠采样代表性算法-BalanceCascade"></a>欠采样代表性算法-BalanceCascade</h4><p>BalanceCascade算法基于Adaboost，将Adaboost作为基分类器，其核心思路是：</p>
+<p>1)在每一轮训练时都使用多数类与少数类数量相等的训练集，训练出一个Adaboost基分类器。</p>
+<p>2)然后使用该分类器对全体多数类进行预测，通过控制分类阈值来控制假正例率（False Positive Rate）,将所有判断正确的类删除。</p>
+<p>3)最后，进入下一轮迭代中，继续降低多数类数量。</p>
+<h4 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h4><p>Liu X Y, Wu J, Zhou Z H. Exploratory undersampling for class-imbalance learning[J]. IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics), 2009, 39(2): 539-550.</p>
+<p>这篇论文提出了两种欠采样的方法：EasyEnsemble和BalanceCascade。</p>
+<h3 id="过采样方法"><a href="#过采样方法" class="headerlink" title="过采样方法"></a>过采样方法</h3><p>对训练集里的少数类进行“过采样”（oversampling），即增加一些少数类样本使得正、反例数目接近，然后再进行学习。</p>
+<h4 id="随机过采样方法"><a href="#随机过采样方法" class="headerlink" title="随机过采样方法"></a>随机过采样方法</h4><p>随机过采样是在少数类$S_{min}$ 中随机选择一些样本，然后通过复制所选择的样本生成样本集$E$，将它们添加到$S_{min}$中来,扩大原始数据集从而得到新的少数类集合$S_{new-min}$。新的数据集$S_{new-min} = S_{min} + E$。</p>
+<h4 id="随机过采样缺点"><a href="#随机过采样缺点" class="headerlink" title="随机过采样缺点"></a>随机过采样缺点</h4><p>对于随机过采样，由于需要对少数类样本进行复制来扩大数据集，造成模型训练复杂度加大。另一方面也容易造成模型的过拟合问题，因为随机过采样是简单的对初始样本进行复制采样，这就使得学习器学得的规则过于具体化，不利于学习器的泛化性能，造成过拟合问题。</p>
+<p>为了解决随机过采样中造成模型过拟合问题，又能保证实现数据集均衡的目的，出现了过采样法代表性的算法SMOTE和Borderline-SMOTE算法。</p>
+<h4 id="过采样代表性算法-SMOTE"><a href="#过采样代表性算法-SMOTE" class="headerlink" title="过采样代表性算法-SMOTE"></a>过采样代表性算法-SMOTE</h4><p>SMOTE (<em>synthetic minority oversampling technique</em>) 的思想概括起来就是在少数类样本之间进行插值来产生额外的样本。具体地，对于一个少数类样本$x_i$使用$K$ 近邻法($k$ 值需要提前指定)，求出距离$x_i$最近的$k$ 个少数类样本，其中距离定义为样本之间$n$ 维特征空间的欧氏距离。然后从$k$ 个近邻点中随机选取一个，使用下列公式生成新样本：</p>
+<p>$$\mathbf{x}<em>{new}=\mathbf{x}</em>{i}+(\mathbf{\hat{x}}<em>{i}-\mathbf{x}</em>{i}) \times \delta $$</p>
+<p>其中$\hat{x}$ 为选出的$k$ 近邻点，$δ∈[0,1]$ 是一个随机数。</p>
+<p>SMOTE算法是对随机过采样方法的一个改进算法，由于随机过采样方法是直接对少数类进行重采用，会使训练集中有很多重复的样本，容易造成产生的模型过拟合问题。而SOMT算法的基本思想是对每个少数类样本，从它的最近邻中随机选择一个样本 （ 是少数类中的一个样本），然后在  和 之间的连线上随机选择一点作为新合成的少数类样本。</p>
+<h5 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h5><p>1).对于少数类中的每一个样本，以欧氏距离为标准计算它到少数类样本集中所有样本的距离，得到其$k$近邻。</p>
+<p>2).根据样本不平衡比例设置一个采样比例以确定采样倍率$N$，对于每一个少数类样本，从其$k$近邻中随机选择若干个样本，假设选择的是$\hat{x_i}$ 。</p>
+<p>3).对于每一个随机选出来的近邻$\hat{x_i}$，分别与按照如上公式构建新的样本。</p>
+<h5 id="算法特点"><a href="#算法特点" class="headerlink" title="算法特点"></a>算法特点</h5><p>SMOTE算法摒弃了随机过采样复制样本的做法，可以防止随机过采样中容易过拟合的问题，实践证明此方法可以提高分类器的性能。但是SMOTE算法也存以下两个缺点：</p>
+<p>1)由于对每个少数类样本都生成新样本，因此容易发生生成样本重叠的问题。</p>
+<p>2)在SMOTE算法中，出现了过度泛化的问题，主要归结于产生合成样本的方法。特别是，SMOTE算法对于每个原少数类样本产生相同数量的合成数据样本，而没有考虑其邻近样本的分布特点，这就使得类间发生重复的可能性增大。<br>为了克服以上两点的限制，多种不同的自适应抽样方法相继被提出，其中具有代表性的算法包括Borderline-SMOTE算法。</p>
+<p>扩展阅读：</p>
 <blockquote>
-<p>塔顶宝珠黯无光，</p>
+<p>Chawla N V, Bowyer K W, Hall L O, et al. SMOTE: synthetic minority over-sampling technique[J]. Journal of artificial intelligence research, 2002, 16: 321-357.</p>
 </blockquote>
-<blockquote>
-<p>乌色渐浓起猖狂；</p>
-</blockquote>
-<blockquote>
-<p>妖邪出没人烟少，</p>
-</blockquote>
-<blockquote>
-<p>一道金光照远方。</p>
-</blockquote>
-<h2 id="《午时炊烟》"><a href="#《午时炊烟》" class="headerlink" title="《午时炊烟》"></a>《午时炊烟》</h2><h3 id="2019年5月3日在老家午饭前情景"><a href="#2019年5月3日在老家午饭前情景" class="headerlink" title="2019年5月3日在老家午饭前情景"></a>2019年5月3日在老家午饭前情景</h3><blockquote>
-<p>朗朗碧空，袅袅炊烟，</p>
-</blockquote>
-<blockquote>
-<p>莺莺燕燕，欢鸣期间；</p>
-</blockquote>
-<blockquote>
-<p>劳动过后，素饭饱餐，</p>
-</blockquote>
-<blockquote>
-<p>人生快意，流连忘返。</p>
-</blockquote>
-<h2 id="《冬季的柳树》"><a href="#《冬季的柳树》" class="headerlink" title="《冬季的柳树》"></a>《冬季的柳树》</h2><h3 id="2019年1月19日逛玄武湖拍湖边柳树时纪事"><a href="#2019年1月19日逛玄武湖拍湖边柳树时纪事" class="headerlink" title="2019年1月19日逛玄武湖拍湖边柳树时纪事"></a>2019年1月19日逛玄武湖拍湖边柳树时纪事</h3><blockquote>
-<p>冬季里风景，依然是优美的。它的美丽之处在于你的想象与期许！</p>
-</blockquote>
-<blockquote>
-<p>譬如说河边的垂柳，叶片已稀疏，我们现在看到了它的萧瑟，但不难想象它</p>
-</blockquote>
-<blockquote>
-<p>在盛夏中曾经葱郁过，下个夏天来临时，它或许再一次绽放….</p>
-</blockquote>
-<h2 id="《爸爸去哪儿了？》"><a href="#《爸爸去哪儿了？》" class="headerlink" title="《爸爸去哪儿了？》"></a>《爸爸去哪儿了？》</h2><h3 id="2017年10月14日在完成幼儿园作业”小企业大调查”时的感想"><a href="#2017年10月14日在完成幼儿园作业”小企业大调查”时的感想" class="headerlink" title="2017年10月14日在完成幼儿园作业”小企业大调查”时的感想"></a>2017年10月14日在完成幼儿园作业”小企业大调查”时的感想</h3><blockquote>
-<p>小小调查知企鹅，</p>
-</blockquote>
-<blockquote>
-<p>冰天世界奥秘多。</p>
-</blockquote>
-<blockquote>
-<p>闺女作画妈涂色，</p>
-</blockquote>
-<blockquote>
-<p>不知爸爸哪去了？</p>
-</blockquote>
-<h2 id="《吾家有女》"><a href="#《吾家有女》" class="headerlink" title="《吾家有女》"></a>《吾家有女》</h2><h3 id="2017年9月3日总结女儿的趣事。"><a href="#2017年9月3日总结女儿的趣事。" class="headerlink" title="2017年9月3日总结女儿的趣事。"></a>2017年9月3日总结女儿的趣事。</h3><blockquote>
-<p>吾家有女五岁半，</p>
-<p>机灵爱美会刷怪；</p>
-<p>绘画裁衣皆想学，</p>
-<p>艺术之路也成才。</p>
-</blockquote>
-<h2 id="《读三国记》"><a href="#《读三国记》" class="headerlink" title="《读三国记》"></a>《读三国记》</h2><h3 id="2017年7月11日开始为女儿讲”三国演义”的故事"><a href="#2017年7月11日开始为女儿讲”三国演义”的故事" class="headerlink" title="2017年7月11日开始为女儿讲”三国演义”的故事"></a>2017年7月11日开始为女儿讲”三国演义”的故事</h3><blockquote>
-<p>少小就知《三国》名，</p>
-</blockquote>
-<blockquote>
-<p>恨学未济体未深；</p>
-</blockquote>
-<blockquote>
-<p>而立方能窥全貌，</p>
-</blockquote>
-<blockquote>
-<p>立誓名篇说后人。</p>
-</blockquote>
-<h2 id="《教师节偶记》"><a href="#《教师节偶记》" class="headerlink" title="《教师节偶记》"></a>《教师节偶记》</h2><h3 id="2016年9月10日家内为老师，顺祝教师节快乐！"><a href="#2016年9月10日家内为老师，顺祝教师节快乐！" class="headerlink" title="2016年9月10日家内为老师，顺祝教师节快乐！"></a>2016年9月10日家内为老师，顺祝教师节快乐！</h3><blockquote>
-<p>一根粉笔，书写多少春秋；</p>
-</blockquote>
-<blockquote>
-<p>三尺讲台，经历人来人往；</p>
-</blockquote>
-<blockquote>
-<p>谆谆教诲，誓把真理参透；</p>
-</blockquote>
-<blockquote>
-<p>丝毫不惧，两鬓已染白霜！</p>
-</blockquote>
-<h2 id="《感叹干部堕落》"><a href="#《感叹干部堕落》" class="headerlink" title="《感叹干部堕落》"></a>《感叹干部堕落》</h2><h3 id="2016年3月25日读一位水利厅长，在损友的围猎下堕落有感"><a href="#2016年3月25日读一位水利厅长，在损友的围猎下堕落有感" class="headerlink" title="2016年3月25日读一位水利厅长，在损友的围猎下堕落有感"></a>2016年3月25日读一位水利厅长，在损友的围猎下堕落有感</h3><blockquote>
-<p>人生轨迹何相似，</p>
-</blockquote>
-<blockquote>
-<p>前赴后继无断绝；</p>
-</blockquote>
-<blockquote>
-<p>损友亦是寻群聚，</p>
-</blockquote>
-<blockquote>
-<p>自正或能免坠尘。</p>
-</blockquote>
+<p>这篇论文提出了SMOTE算法。</p>
+<p><img src="//toukihei.github.io/2019/08/10/类别不平衡问题/sampling_method.png" alt="采样方法图"></p>
 
       
     </div>
@@ -503,11 +459,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/文学/" rel="tag"># 文学</a>
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
           
-            <a href="/tags/诗/" rel="tag"># 诗</a>
-          
-            <a href="/tags/纪事/" rel="tag"># 纪事</a>
+            <a href="/tags/样本不均衡/" rel="tag"># 样本不均衡</a>
           
         </div>
       
@@ -520,8 +474,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/24/VIM常用命令/" rel="next" title="VIM常用命令">
-                <i class="fa fa-chevron-left"></i> VIM常用命令
+              <a href="/2019/07/26/Git常用命令/" rel="next" title="Git常用命令">
+                <i class="fa fa-chevron-left"></i> Git常用命令
               </a>
             
           </div>
@@ -529,10 +483,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/26/Git常用命令/" rel="prev" title="Git常用命令">
-                Git常用命令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -704,7 +654,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#《夏天暴雨来临前情景》"><span class="nav-number">1.</span> <span class="nav-text">《夏天暴雨来临前情景》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2019年7月20日纪事"><span class="nav-number">1.1.</span> <span class="nav-text">2019年7月20日纪事</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#《午时炊烟》"><span class="nav-number">2.</span> <span class="nav-text">《午时炊烟》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2019年5月3日在老家午饭前情景"><span class="nav-number">2.1.</span> <span class="nav-text">2019年5月3日在老家午饭前情景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#《冬季的柳树》"><span class="nav-number">3.</span> <span class="nav-text">《冬季的柳树》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2019年1月19日逛玄武湖拍湖边柳树时纪事"><span class="nav-number">3.1.</span> <span class="nav-text">2019年1月19日逛玄武湖拍湖边柳树时纪事</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#《爸爸去哪儿了？》"><span class="nav-number">4.</span> <span class="nav-text">《爸爸去哪儿了？》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2017年10月14日在完成幼儿园作业”小企业大调查”时的感想"><span class="nav-number">4.1.</span> <span class="nav-text">2017年10月14日在完成幼儿园作业”小企业大调查”时的感想</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#《吾家有女》"><span class="nav-number">5.</span> <span class="nav-text">《吾家有女》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2017年9月3日总结女儿的趣事。"><span class="nav-number">5.1.</span> <span class="nav-text">2017年9月3日总结女儿的趣事。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#《读三国记》"><span class="nav-number">6.</span> <span class="nav-text">《读三国记》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2017年7月11日开始为女儿讲”三国演义”的故事"><span class="nav-number">6.1.</span> <span class="nav-text">2017年7月11日开始为女儿讲”三国演义”的故事</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#《教师节偶记》"><span class="nav-number">7.</span> <span class="nav-text">《教师节偶记》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2016年9月10日家内为老师，顺祝教师节快乐！"><span class="nav-number">7.1.</span> <span class="nav-text">2016年9月10日家内为老师，顺祝教师节快乐！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#《感叹干部堕落》"><span class="nav-number">8.</span> <span class="nav-text">《感叹干部堕落》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2016年3月25日读一位水利厅长，在损友的围猎下堕落有感"><span class="nav-number">8.1.</span> <span class="nav-text">2016年3月25日读一位水利厅长，在损友的围猎下堕落有感</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存在场景"><span class="nav-number">3.</span> <span class="nav-text">存在场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">4.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#欠采样方法"><span class="nav-number">4.1.</span> <span class="nav-text">欠采样方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#随机欠采样方法"><span class="nav-number">4.1.1.</span> <span class="nav-text">随机欠采样方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机欠采样缺点"><span class="nav-number">4.1.2.</span> <span class="nav-text">随机欠采样缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#欠采样代表性算法-EasyEnsemble"><span class="nav-number">4.1.3.</span> <span class="nav-text">欠采样代表性算法-EasyEnsemble</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#欠采样代表性算法-BalanceCascade"><span class="nav-number">4.1.4.</span> <span class="nav-text">欠采样代表性算法-BalanceCascade</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展阅读"><span class="nav-number">4.1.5.</span> <span class="nav-text">扩展阅读</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过采样方法"><span class="nav-number">4.2.</span> <span class="nav-text">过采样方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#随机过采样方法"><span class="nav-number">4.2.1.</span> <span class="nav-text">随机过采样方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机过采样缺点"><span class="nav-number">4.2.2.</span> <span class="nav-text">随机过采样缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过采样代表性算法-SMOTE"><span class="nav-number">4.2.3.</span> <span class="nav-text">过采样代表性算法-SMOTE</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#算法描述"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算法特点"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">算法特点</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
