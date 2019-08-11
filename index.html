@@ -541,48 +541,15 @@
 
       
         
-          
-            <meta name="referrer" content="no-referrer">
+          <meta name="referrer" content="no-referrer">
 ![混淆矩阵图](评估指标与曲线/matrix1.jpg)
-
-<h3 id="评估指标"><a href="#评估指标" class="headerlink" title="评估指标"></a>评估指标</h3><ul>
-<li><p><strong>True Positive</strong> (真正例，TP)：实际为正例，预测为正例。</p>
-</li>
-<li><p><strong>False Negative</strong> (假负例，FN)：实际为正例，预测为负例。</p>
-</li>
-<li><p><strong>True Negative</strong> (真负例，TN)：实际为负例，预测为负例。</p>
-</li>
-<li><p><strong>False Positive</strong> (假正例，FP)：实际为负例，预测为正例。 </p>
-</li>
-<li><p><strong>Precision</strong> (查准率) = $\frac{TP}{TP+FP} $，Precision衡量的是所有被预测为正例的样本中有多少是真正例。但Precision并没有表现有多少正例是被错判为了负例(即FN)，举个极端的例子，分类器只将一个样本判为正例，其他所有都判为负例，这种情况下Precision为100%，但其实遗漏了很多正例，所以Precision常和下面的Recall (TPR) 相结合。</p>
-</li>
-<li><p><strong>True Positive Rate</strong> (TPR，真正例率) = $\frac{TP}{TP+FN}$，又称<strong>Recall</strong>(查全率)，<strong>Sensitivity</strong>(灵敏性)。Recall (TPR)衡量的是所有的正例中有多少是被正确分类了，也可以看作是为了避免假负例(FN)的发生，因为TPR高意味着FN低。Recall的问题和Precision正相反，没有表现出有多少负例被错判为正例(即FP)，若将所有样本全划为正例，则Recall为100%，但这样也没多大用。</p>
-</li>
-<li><p><strong>False Negative Rate</strong> (FNR，假负例率) = $\frac{FN}{TP+FN} = 1−TPR$，由混淆矩阵可以看出该指标的着眼点在于正例，意为有多少正例被错判成了负例。</p>
-</li>
-<li><p><strong>True Negative Rate</strong> (TNR，真负例率) = $\frac{TN}{TN+FP}$ ，又称Specificity(特异性)。Specificity衡量的是所有的负例中有多少是被正确分类了，由于类别不平衡问题中通常关注正例能否正确被识别，Specificity高则FP低，意味着很少将负例错判为正例，即该分类器对正例的判别具有“特异性”，在预测为正例的样本中很少有负例混入。</p>
-</li>
-<li><p><strong>False Positive Rate</strong> (FPR，假正例率) = $\frac{FP}{TN+FP} = 1−TNR$, 由混淆矩阵可以看出该指标的着眼点在于负例，意为有多少负例被错判成了正例。在ROC曲线中分别以TPR和FPR作为纵、横轴作图，显示出一种正例与负例之间的“博弈”。</p>
-</li>
-<li><p>$ F1 score = \frac{2}{\frac{1}{recall}+\frac{1}{precision}}=\frac{2×precision×recall}{precision+recall}$，</p>
-<p>是一个综合指标，为Precision和Recall的调和平均 (harmonic mean)，数值上一般接近于二者中的较小值，因此如果F1 score比较高的话，意味着Precision和Recall都较高。</p>
-</li>
-</ul>
-<p><strong>第一类错误 (Type I error)</strong></p>
-<p>由于我们比较关心正例，所以将负例视为零假设，正例视为备选假设，则第一类错误为错误地拒绝零假设 (负例)，选择备选假设，则为FP；</p>
-<p><strong>第二类错误 (Type II error)</strong></p>
-<p>第二类错误为错误地接受零假设，则为FN。</p>
-<h3 id="评估曲线"><a href="#评估曲线" class="headerlink" title="评估曲线"></a>评估曲线</h3><p>ROC（Receiver Operating Characteristic）曲线和AUC常被用来评价一个二值分类器（binary classifier）的优劣 。</p>
-<h4 id="ROC曲线"><a href="#ROC曲线" class="headerlink" title="ROC曲线"></a>ROC曲线</h4><p>​        ROC空间是一个以伪阳性率（FPR，false positive rate）为X轴，真阳性率（TPR, true positive rate）为Y轴的二维坐标系所代表的平面。其中真阳率TPR = TP / P = recall， 伪阳率FPR = FP / N。</p>
-<p>​        TPR与FPR存在同方向变化的关系（这种关系一般是非线性的），即，为了提升TPR（通过降低阈值），意味着FPR也将得到提升，两者之间存在类似相互制约的关系。我们希望能够在牺牲较少FPR的基础上尽可能地提高TPR，由此画出了ROC曲线。</p>
-<p><img src="//toukihei.github.io/2019/08/08/评估指标与曲线/roc_curve1.png" alt="ROC曲线图"></p>
-<p>当预测效果较好时，ROC曲线凸向左上角的顶点。平移图中对角线，与ROC曲线相切，可以得到TPR较大而FPR较小的点。模型效果越好，则ROC曲线越远离对角线，极端的情形是ROC曲线经过（0，1）点，即将正例全部预测为正例而将负例全部预测为负例。ROC曲线下的面积可以定量地评价模型的效果，记作AUC，AUC越大则模型效果越好。</p>
-<h4 id="两个定义"><a href="#两个定义" class="headerlink" title="两个定义"></a>两个定义</h4><p><strong>Sensitivity</strong>:正确预测到的正例数/实际正例总数</p>
-<p><strong>Specificity</strong>:正确预测到的负例数/实际负例总数</p>
-<p>ROC曲线就是根据这两个指标值绘制出来的，<strong>其中x轴为1-Specificity，y轴为Sensitivity。</strong></p>
-<h3 id="AUC"><a href="#AUC" class="headerlink" title="AUC"></a>AUC</h3><p><strong>AUC的概念</strong>，即ROC曲线下的面积。当曲线偏离45°直线越远，则AUC越大，模型相应就会越好。<strong>一般认为AUC在0.75以上，模型就可以接受了</strong>。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/08/评估指标与曲线/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
