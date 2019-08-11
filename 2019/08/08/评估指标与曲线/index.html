@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="机器学习,样本不均衡,">
+  <meta name="keywords" content="机器学习,评价指标,ROC,AUC,">
 
 
 
@@ -88,20 +88,20 @@
 
 
 
-<meta name="description" content="概述类别不均衡是指在分类学习算法中，不同类别样本的比例相差悬殊，它会对算法的学习过程造成重大的干扰。比如在一个二分类的问题上，有1000个样本，其中5个正样本，995个负样本，在这种情况下，算法只需将所有的样本预测为负样本，那么它的精度也可以达到99.5%，虽然结果的精度很高，但它依然没有价值，因为这样的学习算法不能预测出正样本。这里我们可以知道不均衡问题会导致样本较少那一类的高错分率，即较少">
-<meta name="keywords" content="机器学习,样本不均衡">
+<meta name="description" content="![混淆矩阵图](评估指标与曲线/matrix1.jpg)  评估指标 True Positive (真正例，TP)：实际为正例，预测为正例。  False Negative (假负例，FN)：实际为正例，预测为负例。  True Negative (真负例，TN)：实际为负例，预测为负例。  False Positive (假正例，FP)：实际为负例，预测为正例。   Precision (查">
+<meta name="keywords" content="机器学习,评价指标,ROC,AUC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="类别不平衡问题">
-<meta property="og:url" content="https://toukihei.github.io/2019/08/10/类别不平衡问题/index.html">
+<meta property="og:title" content="评估指标与曲线">
+<meta property="og:url" content="https://toukihei.github.io/2019/08/08/评估指标与曲线/index.html">
 <meta property="og:site_name" content="中学为体，西学为用">
-<meta property="og:description" content="概述类别不均衡是指在分类学习算法中，不同类别样本的比例相差悬殊，它会对算法的学习过程造成重大的干扰。比如在一个二分类的问题上，有1000个样本，其中5个正样本，995个负样本，在这种情况下，算法只需将所有的样本预测为负样本，那么它的精度也可以达到99.5%，虽然结果的精度很高，但它依然没有价值，因为这样的学习算法不能预测出正样本。这里我们可以知道不均衡问题会导致样本较少那一类的高错分率，即较少">
+<meta property="og:description" content="![混淆矩阵图](评估指标与曲线/matrix1.jpg)  评估指标 True Positive (真正例，TP)：实际为正例，预测为正例。  False Negative (假负例，FN)：实际为正例，预测为负例。  True Negative (真负例，TN)：实际为负例，预测为负例。  False Positive (假正例，FP)：实际为负例，预测为正例。   Precision (查">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://toukihei.github.io/2019/08/10/类别不平衡问题/sampling_method.png">
-<meta property="og:updated_time" content="2019-08-10T10:35:10.000Z">
+<meta property="og:image" content="https://toukihei.github.io/2019/08/08/评估指标与曲线/roc_curve1.png">
+<meta property="og:updated_time" content="2019-08-11T14:51:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="类别不平衡问题">
-<meta name="twitter:description" content="概述类别不均衡是指在分类学习算法中，不同类别样本的比例相差悬殊，它会对算法的学习过程造成重大的干扰。比如在一个二分类的问题上，有1000个样本，其中5个正样本，995个负样本，在这种情况下，算法只需将所有的样本预测为负样本，那么它的精度也可以达到99.5%，虽然结果的精度很高，但它依然没有价值，因为这样的学习算法不能预测出正样本。这里我们可以知道不均衡问题会导致样本较少那一类的高错分率，即较少">
-<meta name="twitter:image" content="https://toukihei.github.io/2019/08/10/类别不平衡问题/sampling_method.png">
+<meta name="twitter:title" content="评估指标与曲线">
+<meta name="twitter:description" content="![混淆矩阵图](评估指标与曲线/matrix1.jpg)  评估指标 True Positive (真正例，TP)：实际为正例，预测为正例。  False Negative (假负例，FN)：实际为正例，预测为负例。  True Negative (真负例，TN)：实际为负例，预测为负例。  False Positive (假正例，FP)：实际为负例，预测为正例。   Precision (查">
+<meta name="twitter:image" content="https://toukihei.github.io/2019/08/08/评估指标与曲线/roc_curve1.png">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://toukihei.github.io/2019/08/10/类别不平衡问题/">
+  <link rel="canonical" href="https://toukihei.github.io/2019/08/08/评估指标与曲线/">
 
 
 
 
 
-  <title>类别不平衡问题 | 中学为体，西学为用</title>
+  <title>评估指标与曲线 | 中学为体，西学为用</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://toukihei.github.io/2019/08/10/类别不平衡问题/">
+    <link itemprop="mainEntityOfPage" href="https://toukihei.github.io/2019/08/08/评估指标与曲线/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tou Kihei">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">类别不平衡问题</h1>
+          <h1 class="post-title" itemprop="name headline">评估指标与曲线</h1>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-10T17:21:07+08:00">
-                2019-08-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-08T20:38:12+08:00">
+                2019-08-08
               </time>
             
 
@@ -346,7 +346,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.5k
+                  1.1k
                 </span>
               
 
@@ -362,7 +362,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  4
                 </span>
               
             </div>
@@ -384,56 +384,44 @@
 
       
         <meta name="referrer" content="no-referrer">
+![混淆矩阵图](评估指标与曲线/matrix1.jpg)
 
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>类别不均衡是指在分类学习算法中，不同类别样本的比例相差悬殊，它会对算法的学习过程造成重大的干扰。比如在一个二分类的问题上，有1000个样本，其中5个正样本，995个负样本，在这种情况下，算法只需将所有的样本预测为负样本，那么它的精度也可以达到99.5%，虽然结果的精度很高，但它依然没有价值，因为这样的学习算法不能预测出正样本。这里我们可以知道不均衡问题会导致样本较少那一类的高错分率，即较少一类的样本会有较大的比例会被预测成样本数量较多的那一类。</p>
-<p>​        样本分布不均衡将导致样本量少的分类所包含的特征过少，并很难从中提取规律；即使得到分类模型，也容易产生过度依赖于有限的数据样本而导致过拟合的问题，当模型应用到新的数据上时，模型的准确性和鲁棒性将很差。</p>
-<a id="more"></a>
-
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>类别不平衡问题，顾名思义，即数据集中存在某一类样本，其数量远多于或远少于其他类样本，从而导致一些机器学习模型失效的问题。</p>
-</blockquote>
-<h2 id="存在场景"><a href="#存在场景" class="headerlink" title="存在场景"></a>存在场景</h2><p>类别不平衡问题在很多场景中存在。</p>
-<ul>
-<li>异常检测场景。大多数企业中的异常个案都是少量的，比如恶意刷单、黄牛订单、信用卡欺诈、电力窃电、设备故障等，这些数据样本所占的比例通常是整体样本中很少的一部分，以信用卡欺诈为例，刷实体信用卡的欺诈比例一般都在0.1%以内。</li>
-<li>客户流失场景。大型企业的流失客户相对于整体客户通常是少量的，尤其对于具有垄断地位的行业巨擘，例如电信、石油、网络运营商等更是如此。</li>
-<li>罕见事件的分析。罕见事件与异常检测类似，都属于发生个案较少；但不同点在于异常检测通常都有是预先定义好的规则和逻辑，并且大多数异常事件都对会企业运营造成负面影响，因此针对异常事件的检测和预防非常重要；但罕见事件则无法预判，并且也没有明显的积极和消极影响倾向。例如由于某网络大V无意中转发了企业的一条趣味广告导致用户流量明显提升便属于此类。</li>
-<li>发生频率低的事件。这种事件是预期或计划性事件，但是发生频率非常低。例如每年1次的双11盛会一般都会产生较高的销售额，但放到全年来看这一天的销售额占比很可能只有1%不到，尤其对于很少参与活动的公司而言，这种情况更加明显。这种属于典型的低频事件。</li>
+<h3 id="评估指标"><a href="#评估指标" class="headerlink" title="评估指标"></a>评估指标</h3><ul>
+<li><p><strong>True Positive</strong> (真正例，TP)：实际为正例，预测为正例。</p>
+</li>
+<li><p><strong>False Negative</strong> (假负例，FN)：实际为正例，预测为负例。</p>
+</li>
+<li><p><strong>True Negative</strong> (真负例，TN)：实际为负例，预测为负例。</p>
+</li>
+<li><p><strong>False Positive</strong> (假正例，FP)：实际为负例，预测为正例。 </p>
+</li>
+<li><p><strong>Precision</strong> (查准率) = $\frac{TP}{TP+FP} $，Precision衡量的是所有被预测为正例的样本中有多少是真正例。但Precision并没有表现有多少正例是被错判为了负例(即FN)，举个极端的例子，分类器只将一个样本判为正例，其他所有都判为负例，这种情况下Precision为100%，但其实遗漏了很多正例，所以Precision常和下面的Recall (TPR) 相结合。</p>
+</li>
+<li><p><strong>True Positive Rate</strong> (TPR，真正例率) = $\frac{TP}{TP+FN}$，又称<strong>Recall</strong>(查全率)，<strong>Sensitivity</strong>(灵敏性)。Recall (TPR)衡量的是所有的正例中有多少是被正确分类了，也可以看作是为了避免假负例(FN)的发生，因为TPR高意味着FN低。Recall的问题和Precision正相反，没有表现出有多少负例被错判为正例(即FP)，若将所有样本全划为正例，则Recall为100%，但这样也没多大用。</p>
+</li>
+<li><p><strong>False Negative Rate</strong> (FNR，假负例率) = $\frac{FN}{TP+FN} = 1−TPR$，由混淆矩阵可以看出该指标的着眼点在于正例，意为有多少正例被错判成了负例。</p>
+</li>
+<li><p><strong>True Negative Rate</strong> (TNR，真负例率) = $\frac{TN}{TN+FP}$ ，又称Specificity(特异性)。Specificity衡量的是所有的负例中有多少是被正确分类了，由于类别不平衡问题中通常关注正例能否正确被识别，Specificity高则FP低，意味着很少将负例错判为正例，即该分类器对正例的判别具有“特异性”，在预测为正例的样本中很少有负例混入。</p>
+</li>
+<li><p><strong>False Positive Rate</strong> (FPR，假正例率) = $\frac{FP}{TN+FP} = 1−TNR$, 由混淆矩阵可以看出该指标的着眼点在于负例，意为有多少负例被错判成了正例。在ROC曲线中分别以TPR和FPR作为纵、横轴作图，显示出一种正例与负例之间的“博弈”。</p>
+</li>
+<li><p>$ F1 score = \frac{2}{\frac{1}{recall}+\frac{1}{precision}}=\frac{2×precision×recall}{precision+recall}$，</p>
+<p>是一个综合指标，为Precision和Recall的调和平均 (harmonic mean)，数值上一般接近于二者中的较小值，因此如果F1 score比较高的话，意味着Precision和Recall都较高。</p>
+</li>
 </ul>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>1、过采样，减少数量较多那一类样本的数量，使得正负样本比例均衡。<br>2、欠采样，增加数量较少那一类样本的数量，使得正负样本比例均衡。<br>3、不处理样本，样本分类阈值移动。</p>
-<h3 id="欠采样方法"><a href="#欠采样方法" class="headerlink" title="欠采样方法"></a>欠采样方法</h3><p>直接对训练集中多数类样本进行“欠采样”（undersampling），即去除一些多数类中的样本使得正例、反例数目接近，然后再进行学习。</p>
-<h4 id="随机欠采样方法"><a href="#随机欠采样方法" class="headerlink" title="随机欠采样方法"></a>随机欠采样方法</h4><p>随机欠采样顾名思义即从多数类$S_{maj}$中随机选择一些样样本组成样本集 $E$。然后将样本集 $E$从 $S_{maj}$ 中移除。新的数据集 $S_{new-maj}= S_{maj}- E$。</p>
-<h4 id="随机欠采样缺点"><a href="#随机欠采样缺点" class="headerlink" title="随机欠采样缺点"></a>随机欠采样缺点</h4><p>随机欠采样方法通过改变多数类样本比例以达到修改样本分布的目的，从而使样本分布较为均衡，但是这也存在一些问题。对于随机欠采样，由于采样的样本集合要少于原来的样本集合，因此会造成一些信息缺失，即将多数类样本删除有可能会导致分类器丢失有关多数类的重要信息。</p>
-<p>为了克服随机欠采样方法导致的信息缺失问题，又要保证算法表现出较好的不均衡数据分类性能，出现了欠采样法代表性的算法EasyEnsemble和BalanceCascade算法。</p>
-<h4 id="欠采样代表性算法-EasyEnsemble"><a href="#欠采样代表性算法-EasyEnsemble" class="headerlink" title="欠采样代表性算法-EasyEnsemble"></a>欠采样代表性算法-EasyEnsemble</h4><p>算法步骤：</p>
-<p>1)从多数类中有放回的随机采样$n$次，每次选取与少数类数目相近的样本个数，那么可以得到$n$个样本集合记作${S_{1maj},S_{2maj},…,S_{nmaj}}$。</p>
-<p>2)然后，将每一个多数类样本的子集与少数类样本合并并训练出一个模型，可以得到$n$个模型。</p>
-<p>3)最终将这些模型组合形成一个集成学习系统，最终的模型结果是这$n$个模型的平均值。</p>
-<h4 id="欠采样代表性算法-BalanceCascade"><a href="#欠采样代表性算法-BalanceCascade" class="headerlink" title="欠采样代表性算法-BalanceCascade"></a>欠采样代表性算法-BalanceCascade</h4><p>BalanceCascade算法基于Adaboost，将Adaboost作为基分类器，其核心思路是：</p>
-<p>1)在每一轮训练时都使用多数类与少数类数量相等的训练集，训练出一个Adaboost基分类器。</p>
-<p>2)然后使用该分类器对全体多数类进行预测，通过控制分类阈值来控制假正例率（False Positive Rate）,将所有判断正确的类删除。</p>
-<p>3)最后，进入下一轮迭代中，继续降低多数类数量。</p>
-<h4 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h4><p>Liu X Y, Wu J, Zhou Z H. Exploratory undersampling for class-imbalance learning[J]. IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics), 2009, 39(2): 539-550.</p>
-<p>这篇论文提出了两种欠采样的方法：EasyEnsemble和BalanceCascade。</p>
-<h3 id="过采样方法"><a href="#过采样方法" class="headerlink" title="过采样方法"></a>过采样方法</h3><p>对训练集里的少数类进行“过采样”（oversampling），即增加一些少数类样本使得正、反例数目接近，然后再进行学习。</p>
-<h4 id="随机过采样方法"><a href="#随机过采样方法" class="headerlink" title="随机过采样方法"></a>随机过采样方法</h4><p>随机过采样是在少数类$S_{min}$ 中随机选择一些样本，然后通过复制所选择的样本生成样本集$E$，将它们添加到$S_{min}$中来,扩大原始数据集从而得到新的少数类集合$S_{new-min}$。新的数据集$S_{new-min} = S_{min} + E$。</p>
-<h4 id="随机过采样缺点"><a href="#随机过采样缺点" class="headerlink" title="随机过采样缺点"></a>随机过采样缺点</h4><p>对于随机过采样，由于需要对少数类样本进行复制来扩大数据集，造成模型训练复杂度加大。另一方面也容易造成模型的过拟合问题，因为随机过采样是简单的对初始样本进行复制采样，这就使得学习器学得的规则过于具体化，不利于学习器的泛化性能，造成过拟合问题。</p>
-<p>为了解决随机过采样中造成模型过拟合问题，又能保证实现数据集均衡的目的，出现了过采样法代表性的算法SMOTE和Borderline-SMOTE算法。</p>
-<h4 id="过采样代表性算法-SMOTE"><a href="#过采样代表性算法-SMOTE" class="headerlink" title="过采样代表性算法-SMOTE"></a>过采样代表性算法-SMOTE</h4><p>SMOTE (<em>synthetic minority oversampling technique</em>) 的思想概括起来就是在少数类样本之间进行插值来产生额外的样本。具体地，对于一个少数类样本$x_i$使用$K$ 近邻法($k$ 值需要提前指定)，求出距离$x_i$最近的$k$ 个少数类样本，其中距离定义为样本之间$n$ 维特征空间的欧氏距离。然后从$k$ 个近邻点中随机选取一个，使用下列公式生成新样本：</p>
-<p>$$\mathbf{x}<em>{new}=\mathbf{x}</em>{i}+(\mathbf{\hat{x}}<em>{i}-\mathbf{x}</em>{i}) \times \delta $$</p>
-<p>其中$\hat{x}$ 为选出的$k$ 近邻点，$δ∈[0,1]$ 是一个随机数。</p>
-<p>SMOTE算法是对随机过采样方法的一个改进算法，由于随机过采样方法是直接对少数类进行重采用，会使训练集中有很多重复的样本，容易造成产生的模型过拟合问题。而SOMT算法的基本思想是对每个少数类样本，从它的最近邻中随机选择一个样本 （ 是少数类中的一个样本），然后在  和 之间的连线上随机选择一点作为新合成的少数类样本。</p>
-<h5 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h5><p>1).对于少数类中的每一个样本，以欧氏距离为标准计算它到少数类样本集中所有样本的距离，得到其$k$近邻。</p>
-<p>2).根据样本不平衡比例设置一个采样比例以确定采样倍率$N$，对于每一个少数类样本，从其$k$近邻中随机选择若干个样本，假设选择的是$\hat{x_i}$ 。</p>
-<p>3).对于每一个随机选出来的近邻$\hat{x_i}$，分别与按照如上公式构建新的样本。</p>
-<h5 id="算法特点"><a href="#算法特点" class="headerlink" title="算法特点"></a>算法特点</h5><p>SMOTE算法摒弃了随机过采样复制样本的做法，可以防止随机过采样中容易过拟合的问题，实践证明此方法可以提高分类器的性能。但是SMOTE算法也存以下两个缺点：</p>
-<p>1)由于对每个少数类样本都生成新样本，因此容易发生生成样本重叠的问题。</p>
-<p>2)在SMOTE算法中，出现了过度泛化的问题，主要归结于产生合成样本的方法。特别是，SMOTE算法对于每个原少数类样本产生相同数量的合成数据样本，而没有考虑其邻近样本的分布特点，这就使得类间发生重复的可能性增大。<br>为了克服以上两点的限制，多种不同的自适应抽样方法相继被提出，其中具有代表性的算法包括Borderline-SMOTE算法。</p>
-<p>扩展阅读：</p>
-<blockquote>
-<p>Chawla N V, Bowyer K W, Hall L O, et al. SMOTE: synthetic minority over-sampling technique[J]. Journal of artificial intelligence research, 2002, 16: 321-357.</p>
-</blockquote>
-<p>这篇论文提出了SMOTE算法。</p>
-<p><img src="//toukihei.github.io/2019/08/10/类别不平衡问题/sampling_method.png" alt="采样方法图"></p>
+<p><strong>第一类错误 (Type I error)</strong></p>
+<p>由于我们比较关心正例，所以将负例视为零假设，正例视为备选假设，则第一类错误为错误地拒绝零假设 (负例)，选择备选假设，则为FP；</p>
+<p><strong>第二类错误 (Type II error)</strong></p>
+<p>第二类错误为错误地接受零假设，则为FN。</p>
+<h3 id="评估曲线"><a href="#评估曲线" class="headerlink" title="评估曲线"></a>评估曲线</h3><p>ROC（Receiver Operating Characteristic）曲线和AUC常被用来评价一个二值分类器（binary classifier）的优劣 。</p>
+<h4 id="ROC曲线"><a href="#ROC曲线" class="headerlink" title="ROC曲线"></a>ROC曲线</h4><p>​        ROC空间是一个以伪阳性率（FPR，false positive rate）为X轴，真阳性率（TPR, true positive rate）为Y轴的二维坐标系所代表的平面。其中真阳率TPR = TP / P = recall， 伪阳率FPR = FP / N。</p>
+<p>​        TPR与FPR存在同方向变化的关系（这种关系一般是非线性的），即，为了提升TPR（通过降低阈值），意味着FPR也将得到提升，两者之间存在类似相互制约的关系。我们希望能够在牺牲较少FPR的基础上尽可能地提高TPR，由此画出了ROC曲线。</p>
+<p><img src="//toukihei.github.io/2019/08/08/评估指标与曲线/roc_curve1.png" alt="ROC曲线图"></p>
+<p>当预测效果较好时，ROC曲线凸向左上角的顶点。平移图中对角线，与ROC曲线相切，可以得到TPR较大而FPR较小的点。模型效果越好，则ROC曲线越远离对角线，极端的情形是ROC曲线经过（0，1）点，即将正例全部预测为正例而将负例全部预测为负例。ROC曲线下的面积可以定量地评价模型的效果，记作AUC，AUC越大则模型效果越好。</p>
+<h4 id="两个定义"><a href="#两个定义" class="headerlink" title="两个定义"></a>两个定义</h4><p><strong>Sensitivity</strong>:正确预测到的正例数/实际正例总数</p>
+<p><strong>Specificity</strong>:正确预测到的负例数/实际负例总数</p>
+<p>ROC曲线就是根据这两个指标值绘制出来的，<strong>其中x轴为1-Specificity，y轴为Sensitivity。</strong></p>
+<h3 id="AUC"><a href="#AUC" class="headerlink" title="AUC"></a>AUC</h3><p><strong>AUC的概念</strong>，即ROC曲线下的面积。当曲线偏离45°直线越远，则AUC越大，模型相应就会越好。<strong>一般认为AUC在0.75以上，模型就可以接受了</strong>。</p>
 
       
     </div>
@@ -463,7 +451,11 @@
           
             <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
           
-            <a href="/tags/样本不均衡/" rel="tag"># 样本不均衡</a>
+            <a href="/tags/评价指标/" rel="tag"># 评价指标</a>
+          
+            <a href="/tags/ROC/" rel="tag"># ROC</a>
+          
+            <a href="/tags/AUC/" rel="tag"># AUC</a>
           
         </div>
       
@@ -476,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/08/评估指标与曲线/" rel="next" title="评估指标与曲线">
-                <i class="fa fa-chevron-left"></i> 评估指标与曲线
+              <a href="/2019/07/26/Git常用命令/" rel="next" title="Git常用命令">
+                <i class="fa fa-chevron-left"></i> Git常用命令
               </a>
             
           </div>
@@ -485,6 +477,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/10/类别不平衡问题/" rel="prev" title="类别不平衡问题">
+                类别不平衡问题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -656,7 +652,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存在场景"><span class="nav-number">3.</span> <span class="nav-text">存在场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">4.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#欠采样方法"><span class="nav-number">4.1.</span> <span class="nav-text">欠采样方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#随机欠采样方法"><span class="nav-number">4.1.1.</span> <span class="nav-text">随机欠采样方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机欠采样缺点"><span class="nav-number">4.1.2.</span> <span class="nav-text">随机欠采样缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#欠采样代表性算法-EasyEnsemble"><span class="nav-number">4.1.3.</span> <span class="nav-text">欠采样代表性算法-EasyEnsemble</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#欠采样代表性算法-BalanceCascade"><span class="nav-number">4.1.4.</span> <span class="nav-text">欠采样代表性算法-BalanceCascade</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展阅读"><span class="nav-number">4.1.5.</span> <span class="nav-text">扩展阅读</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过采样方法"><span class="nav-number">4.2.</span> <span class="nav-text">过采样方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#随机过采样方法"><span class="nav-number">4.2.1.</span> <span class="nav-text">随机过采样方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机过采样缺点"><span class="nav-number">4.2.2.</span> <span class="nav-text">随机过采样缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过采样代表性算法-SMOTE"><span class="nav-number">4.2.3.</span> <span class="nav-text">过采样代表性算法-SMOTE</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#算法描述"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算法特点"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">算法特点</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#评估指标"><span class="nav-number">1.</span> <span class="nav-text">评估指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评估曲线"><span class="nav-number">2.</span> <span class="nav-text">评估曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ROC曲线"><span class="nav-number">2.1.</span> <span class="nav-text">ROC曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两个定义"><span class="nav-number">2.2.</span> <span class="nav-text">两个定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AUC"><span class="nav-number">3.</span> <span class="nav-text">AUC</span></a></li></ol></div>
             
 
           </div>
